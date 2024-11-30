@@ -23,13 +23,13 @@ struct PlayerList {
 	PlayerNode* head;
 	int size;
 
-	void init();							// khởi tạo danh sách người chơi rỗng
+	void init();					// khởi tạo danh sách người chơi rỗng
 	void pushFront(Player player1);			// thêm người chơi vào đầu danh sách
 	void pushBack(Player player1);			// thêm người chơi vào cuối danh sách
-	void popFront();						// xóa người chơi ở đầu danh sách
-	void popBack();							// xóa người chơi ở cuối danh sách
+	void popFront();				// xóa người chơi ở đầu danh sách
+	void popBack();					// xóa người chơi ở cuối danh sách
 	void insertPlayer(Player player1);		// thêm người chơi vào danh sách mà không làm mất tính tăng dần của điểm
-	void deleteList();						// giải phóng vùng nhớ của các node trong danh sách
+	void deleteList();				// giải phóng vùng nhớ của các node trong danh sách
 };
 
 // hiển thị thời gian trôi qua trong quá trình chơi
