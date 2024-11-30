@@ -12,17 +12,17 @@ int main() {
 	SetScreenBufferSize(150, 43);
 	SetWindowSize(150, 70);
 
-	Screen screen = Menu;						// xác định màn hình cần hiển thị
-	bool newgame = true;						// kiểm tra đây trò chơi mới hay trò chơi đã được lưu trong resume
+	Screen screen = Menu;					// xác định màn hình cần hiển thị
+	bool newgame = true;					// kiểm tra đây trò chơi mới hay trò chơi đã được lưu trong resume
 	string player_name = "test";				// lưu tên người chơi nếu trò chơi mới, lưu tên file nếu trò chơi resume
 
-	int table_size = 0;							// lưu kích thước bảng số (table), 0,1,...,6 ứng với 4x4,5x5,...,10x10
-	int unre = 0;								// lưu chế độ undo/redo, 0 : tắt, 1 : bật undo, 2 : bật cả undo và redo
-	int delay = 0;								// lưu thời gian chờ để một ô random xuất hiện sau khi di chuyển
+	int table_size = 0;					// lưu kích thước bảng số (table), 0,1,...,6 ứng với 4x4,5x5,...,10x10
+	int unre = 0;						// lưu chế độ undo/redo, 0 : tắt, 1 : bật undo, 2 : bật cả undo và redo
+	int delay = 0;						// lưu thời gian chờ để một ô random xuất hiện sau khi di chuyển
 
 	string player1_name, player2_name;			// (PVP MODE) lưu tên 2 người chơi
-	bool pvp = false;							// (PVP MODE) kiểm tra chế độ PVP được chọn		
-	int time_battle = 0;						// (PVP MODE) lưu thời gian được chọn để đếm ngược
+	bool pvp = false;					// (PVP MODE) kiểm tra chế độ PVP được chọn		
+	int time_battle = 0;					// (PVP MODE) lưu thời gian được chọn để đếm ngược
 
 	while (true) {
 		if (screen == Menu) {
