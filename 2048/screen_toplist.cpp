@@ -15,25 +15,25 @@ void screenTopList(Screen& screen) {
 	SetColor3(15);
 	int xo = (w_border - 75) / 2, yo = 13;
 	for (int i = 0; i <= 75; i++) {
-		gotoxy(xo + i, yo);			cout << (char)205;
+		gotoxy(xo + i, yo);		cout << (char)205;
 		gotoxy(xo + i, yo + 2);		cout << (char)205;
 		gotoxy(xo + i, yo + 23);	cout << (char)205;
 	}
 	for (int i = 0; i <= 22; i++) {
-		gotoxy(xo, yo + i);			cout << (char)186;
+		gotoxy(xo, yo + i);		cout << (char)186;
 		gotoxy(xo + 9, yo + i);		cout << (char)186;
 		gotoxy(xo + 36, yo + i);	cout << (char)186;
 		gotoxy(xo + 56, yo + i);	cout << (char)186;
 		gotoxy(xo + 75, yo + i);	cout << (char)186;
 	}
 	// bo góc hàng yo
-	gotoxy(xo, yo);				cout << (char)201;
-	gotoxy(xo + 9, yo);			cout << (char)203;
+	gotoxy(xo, yo);			cout << (char)201;
+	gotoxy(xo + 9, yo);		cout << (char)203;
 	gotoxy(xo + 36, yo);		cout << (char)203;
 	gotoxy(xo + 56, yo);		cout << (char)203;
 	gotoxy(xo + 75, yo);		cout << (char)187;
 	// bo góc hàng yo + 2
-	gotoxy(xo, yo + 2);			cout << (char)204;
+	gotoxy(xo, yo + 2);		cout << (char)204;
 	gotoxy(xo + 9, yo + 2);		cout << (char)206;
 	gotoxy(xo + 36, yo + 2);	cout << (char)206;
 	gotoxy(xo + 56, yo + 2);	cout << (char)206;
