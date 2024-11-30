@@ -7,7 +7,7 @@ void chooseMenu(int n, int x, int y, int w, int h, int text_color, int back_colo
 	int x_prev = x_bar, y_prev = y_bar;
 	string text_prev = text[0];
 	int text_idx = 0, idx_prev = 0;
-	bool check = true;							// kiểm tra con trỏ hiện tại đang ở vị trí của ô chữ
+	bool check = true;					// kiểm tra con trỏ hiện tại đang ở vị trí của ô chữ
 	while (true) {
 		if (check) {
 			// xóa highlight của ô chữ vừa đi qua
