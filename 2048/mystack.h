@@ -24,7 +24,7 @@ struct myStack {
 	int size;
 	
 	void init();															// khởi tạo stack rỗng
-	void pushInt(int** matrix, int row, int col, int score);				// thêm ma trận kiểu int** vào stack
+	void pushInt(int** matrix, int row, int col, int score);			// thêm ma trận kiểu int** vào stack
 	void pushChar(char** matrix, int row, int col, unsigned int score);		// thêm ma trận kiểu chr** vào stack
 	void pop();																// xóa phần tử cuối của stack
 	void top(int** table, int row, int col, unsigned int& score);			// lấy ra phần tử cuối của stack
