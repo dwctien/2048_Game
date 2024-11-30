@@ -3,48 +3,48 @@
 void moveLeft(int** table, int nRow, int nCol, unsigned int& score, bool& changed) {		// Hàm thực hiện dồn bảng sang trái, đồng thời trả về số điểm thu được và cho biết công việc dồn có được thực hiện hay không
 	// Part 1: Tính tổng 2 phần tử và gộp lại
 	for (int row = 0; row < nRow; row++) {
-		int i = 0;												// chỉ số của mảng
-		bool added = true;										// cho biết phép cộng gộp đã được thực hiện chưa
+		int i = 0;									// chỉ số của mảng
+		bool added = true;								// cho biết phép cộng gộp đã được thực hiện chưa
 		int tmp, index;
 		while (i < nCol) {
 			while (table[row][i] == 0) ++i;						// bỏ qua phần tử 0
-			if (added) {										// nếu phép cộng gộp đã được thực hiện rồi
-				tmp = table[row][i];							// lưu giá trị số hạng đầu tiên của phép cộng gộp
-				index = i;										// lưu chỉ số của số hạng đầu tiên của phép cộng gộp
-				added = false;									// đánh dấu là chưa thực hiện phép cộng gộp
+			if (added) {								// nếu phép cộng gộp đã được thực hiện rồi
+				tmp = table[row][i];						// lưu giá trị số hạng đầu tiên của phép cộng gộp
+				index = i;							// lưu chỉ số của số hạng đầu tiên của phép cộng gộp
+				added = false;							// đánh dấu là chưa thực hiện phép cộng gộp
 				++i;
-				continue;										// duyệt phần tử tiếp theo của mảng
+				continue;							// duyệt phần tử tiếp theo của mảng
 			}
-			if (table[row][i] == tmp && i < nCol) {				// nếu phần tử bằng với số hạng đầu tiên của phép cộng gộp
-				table[row][index] *= 2;							// tăng giá trị của số hạng đầu tiên lên gấp đôi
-				score += table[row][index];						// cập nhật điểm số
-				table[row][i] = 0;								// vì gộp 2 số lại nên số hạng thứ 2 lúc này bằng 0
-				added = true;									// đánh dấu là đã thực hiện phép cộng gộp
-				changed = true;									// đánh dấu là ma trận đã có sự thay đổi
+			if (table[row][i] == tmp && i < nCol) {					// nếu phần tử bằng với số hạng đầu tiên của phép cộng gộp
+				table[row][index] *= 2;						// tăng giá trị của số hạng đầu tiên lên gấp đôi
+				score += table[row][index];					// cập nhật điểm số
+				table[row][i] = 0;						// vì gộp 2 số lại nên số hạng thứ 2 lúc này bằng 0
+				added = true;							// đánh dấu là đã thực hiện phép cộng gộp
+				changed = true;							// đánh dấu là ma trận đã có sự thay đổi
 			}
-			else {												// nếu phần tử khác với số hạng đầu tiên của phép cộng gộp
-				tmp = table[row][i];							// thực hiện giống như khi phép cộng đã được thực hiện rồi
+			else {									// nếu phần tử khác với số hạng đầu tiên của phép cộng gộp
+				tmp = table[row][i];						// thực hiện giống như khi phép cộng đã được thực hiện rồi
 				index = i;
 				added = false;
 			}
 			++i;
 		}
 		// Part 2: Dồn các phần tử khác 0 về một phía (trái)
-		int j = 0;												// chỉ số của mảng
-		bool moved = true;										// cho biết phép di chuyển đã thực hiện chưa
+		int j = 0;									// chỉ số của mảng
+		bool moved = true;								// cho biết phép di chuyển đã thực hiện chưa
 		int zero;
 		while (j < nCol) {
 			if (table[row][j] == 0) {
-				zero = j;										// lưu chỉ số của phần tử 0 đầu tiên
-				moved = false;									// đánh dấu phép di chuyển chưa được thực hiện
-				while (j < nCol && table[row][j] == 0) ++j;		// tìm đến phần tử khác 0 đầu tiên
+				zero = j;							// lưu chỉ số của phần tử 0 đầu tiên
+				moved = false;							// đánh dấu phép di chuyển chưa được thực hiện
+				while (j < nCol && table[row][j] == 0) ++j;			// tìm đến phần tử khác 0 đầu tiên
 			}
-			if (j < nCol && !moved) {							// nếu phép di chuyển chưa được thực hiện
+			if (j < nCol && !moved) {						// nếu phép di chuyển chưa được thực hiện
 				table[row][zero] = table[row][j];				// thực hiện di chuyển
 				table[row][j] = 0;
-				moved = true;									// đánh dấu phép di chuyển đã được thực hiện
-				changed = true;									// đánh dấu là ma trận đã có sự thay đổi
-				j = zero;										// quay lại phần tử 0 đầu tiên để tiếp tục dồn số
+				moved = true;							// đánh dấu phép di chuyển đã được thực hiện
+				changed = true;							// đánh dấu là ma trận đã có sự thay đổi
+				j = zero;							// quay lại phần tử 0 đầu tiên để tiếp tục dồn số
 			}
 			++j;
 		}
